@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     public bool isGameActive; 
     public GameObject titleScreen;
     public GameObject button;
-
+    public GameObject Background;
+    public GameObject Slider;
+    public GameObject VolumeText;
     public GameObject pauseScreen;
     private bool paused;
 
@@ -42,6 +44,10 @@ public class GameManager : MonoBehaviour
 
         titleScreen.gameObject.SetActive(false);
         button.gameObject.SetActive(false);
+        Background.gameObject.SetActive(false);
+        Slider.gameObject.SetActive(false);
+        VolumeText.gameObject.SetActive(false);
+
     }
 
 
