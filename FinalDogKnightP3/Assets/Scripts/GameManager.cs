@@ -9,7 +9,7 @@ using Unity.VisualScripting.Antlr3.Runtime;
 
 public class GameManager : MonoBehaviour
 {
-
+    public GameObject HealthBar;
     public bool isGameActive; 
     public GameObject titleScreen;
     public GameObject button;
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject VolumeText;
     public GameObject pauseScreen;
     private bool paused;
+    
 
 
 
@@ -47,8 +48,17 @@ public class GameManager : MonoBehaviour
         Background.gameObject.SetActive(false);
         Slider.gameObject.SetActive(false);
         VolumeText.gameObject.SetActive(false);
-
+        
+        if (isGameActive = true)
+        {
+            HealthBar.SetActive(true);
+        }
+        else
+        {
+            HealthBar.SetActive(false);
+        }
     }
+       
 
 
     // Pause screen.
