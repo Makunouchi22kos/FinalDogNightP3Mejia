@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 100.0f;
     public float jumpForce = 5;
     private Rigidbody playerRb;
+    public bool isOnGround = true;
    
     private float HorizontalInput;
     private float VerticalInput;
@@ -45,11 +46,27 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
         
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-
-           
+            isOnGround = false;
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            anim.SetTrigger("Attack");
+        }
+
+       
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+       
+    }
+
 }
