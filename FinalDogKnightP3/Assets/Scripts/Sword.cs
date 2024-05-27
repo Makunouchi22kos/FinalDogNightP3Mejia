@@ -7,6 +7,8 @@ public class Sword : MonoBehaviour
 
     public int damageAmount = 20;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class Sword : MonoBehaviour
         if(other.gameObject.tag == "Enemy");
         {
             
-            other.GetComponent<EnemyHealth>().EnemyDamage(damageAmount);
+             other.GetComponent<EnemyHealth>().EnemyDamage(damageAmount);
              Debug.Log("Hit");
         }
     }

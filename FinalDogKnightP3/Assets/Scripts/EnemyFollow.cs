@@ -7,7 +7,7 @@ public class EnemyFollow : MonoBehaviour
 {
     [SerializeField] float stoppingDistance;
 
-    [SerializeField] float damage;
+    
     float lastAttackTime = 2;
     float attackCooldown = 3;
 
@@ -33,7 +33,6 @@ public class EnemyFollow : MonoBehaviour
             if(Time.time - lastAttackTime >= attackCooldown)
             {
                 lastAttackTime = Time.time;
-                target.GetComponent<CharacterStats>().TakeDamage(damage);
             } 
         }
         else
@@ -59,15 +58,6 @@ public class EnemyFollow : MonoBehaviour
         if (agent.isStopped = true)
         {
             anim.SetTrigger("Attack");
-        }
-    }
-   
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<CharacterStats>().TakeDamage(damage);
-
         }
     }
 }
