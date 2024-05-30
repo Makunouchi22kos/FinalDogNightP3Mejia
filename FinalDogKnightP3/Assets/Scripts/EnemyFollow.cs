@@ -45,7 +45,7 @@ public class EnemyFollow : MonoBehaviour
     {
         agent.isStopped = false;
         agent.SetDestination(target.transform.position);
-        if(agent.isStopped = false);
+        if(agent.isStopped == false)
         {
             anim.SetTrigger("Walk");
         }
@@ -55,7 +55,7 @@ public class EnemyFollow : MonoBehaviour
     {
         
         agent.isStopped = true;
-        if (agent.isStopped = true)
+        if (agent.isStopped == true)
         {
             anim.SetTrigger("Attack");
         }
