@@ -8,14 +8,11 @@ public class CharacterStats : MonoBehaviour
 
     public float currHealth;
     public float maxHealth;
-    private bool isDead;
     public float minHealth;
 
-    public Animator transition;
-
-    public Animator anim;
-
     public HealthBar healthBar;
+
+    Animator transitionAnim;
 
     //Sets the Health Bar to max at the beginning of the game.
     void Start()
@@ -41,15 +38,10 @@ public class CharacterStats : MonoBehaviour
         currHealth -= damage;
 
         healthBar.SetSlider(currHealth);
-    }
 
-    void Die()
-    {
-        if (currHealth == minHealth)
+        if (currHealth <= 0)
         {
-                SceneManager.LoadScene(2);
-                transition.SetTrigger("Start");
+            SceneManager.LoadScene(2);
         }
-               
     }
 }

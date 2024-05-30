@@ -15,13 +15,13 @@ public class Sword : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         
         if(other.gameObject.tag == "Enemy")
         {
             
-             other.GetComponent<EnemyHealth>().EnemyDamage(damageAmount);
+             other.gameObject.GetComponent<EnemyHealth>().EnemyDamage(damageAmount);
              Debug.Log("Hit");
         }
     }

@@ -678,7 +678,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3131177580874147845}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 4
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -748,12 +748,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.4440365, y: 3.2056367, z: 4.1769323}
-  m_Center: {x: 0.04149079, y: 2.4278455, z: -0.615914}
+  m_Size: {x: 4.4440365, y: 3.2056367, z: 5.3898783}
+  m_Center: {x: 0.04149079, y: 2.4278455, z: -0.009435415}
 --- !u!54 &7115114625450835134
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2057,10 +2057,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 86.73531
-  m_Height: 173.47066
+  m_Radius: 118.24543
+  m_Height: 236.49098
   m_Direction: 1
-  m_Center: {x: -69.3, y: -38.18156, z: 40.93374}
+  m_Center: {x: -37.789734, y: -27.53, z: 40.93373}
 --- !u!1 &6533632700769419900
 GameObject:
   m_ObjectHideFlags: 0

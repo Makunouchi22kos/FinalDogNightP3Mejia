@@ -9,12 +9,14 @@ public class EnemyHealth : MonoBehaviour
 
 
     Spawner spawn;
+    GameController gameController;
     
 
 
     private void Start()
     {
-        spawn = GameController.GetComponentInChildren<Spawner>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        spawn = gameController.GetComponentInChildren<Spawner>();
     }
 
 
@@ -26,19 +28,13 @@ public class EnemyHealth : MonoBehaviour
             
             anim.SetTrigger("Die");
             GetComponent<Collider>().enabled = false;
-            GetComponent<EnemyFollow>().enabled = false;  
+            GetComponent<EnemyFollow>().enabled = false;
+            spawn.enemiesKilled++;
+            Destroy(gameObject);
         }
 
-        if (spawn.enemiesKilled >= spawn.enemySpawnAmount)
-        {
-            spawn.NextWave();
-        }
-        else
-        {
-            spawn.enemiesKilled++;
-        }
-        
     }
+
 
 
 }

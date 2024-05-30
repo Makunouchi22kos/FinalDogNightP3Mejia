@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
 
-    public Animator transition;
+   
     public void restart()
     {
         SceneManager.LoadScene(0);
-
-        transition.SetTrigger("Start");
-
     }
     
 }
